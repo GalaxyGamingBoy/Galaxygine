@@ -8,7 +8,7 @@ export default class Draw {
     }
 
     // FUNCTIONS
-    public drawSquare(
+    public drawRectangle(
         x: number,
         y: number,
         width: number,
@@ -19,7 +19,7 @@ export default class Draw {
         this.galaxygineCanvasContext.fillRect(x, y, width, height);
     }
 
-    public drawSquareOutline(
+    public drawRectangleOutline(
         x: number,
         y: number,
         width: number,
@@ -30,7 +30,39 @@ export default class Draw {
         this.galaxygineCanvasContext.strokeRect(x, y, width, height);
     }
 
-    public eraseSquare(
+    public drawRectangleWithOutline(
+        x: number,
+        y: number,
+        width: number,
+        height: number,
+        outlineColor: string = "000000",
+        squareColor: string = "000000"
+    ): void {
+        this.drawRectangle(x, y, width, height, squareColor);
+        this.drawRectangleOutline(x, y, width, height, outlineColor);
+    }
+
+    public drawText(
+        x: number,
+        y: number,
+        text: string,
+        color: string = "000000"
+    ) {
+        this.galaxygineCanvasContext.fillStyle = color;
+        this.galaxygineCanvasContext.fillText(text, x, y);
+    }
+
+    public drawStrokeText(
+        x: number,
+        y: number,
+        text: string,
+        color: string = "000000"
+    ) {
+        this.galaxygineCanvasContext.strokeStyle = color;
+        this.galaxygineCanvasContext.strokeText(text, x, y);
+    }
+
+    public eraseRectangle(
         x: number,
         y: number,
         width: number,
@@ -43,7 +75,12 @@ export default class Draw {
         const galaxygineCanvas = <HTMLCanvasElement>(
             document.getElementById("galaxygine-canvas")
         );
-        this.eraseSquare(0, 0, galaxygineCanvas.width, galaxygineCanvas.height);
+        this.eraseRectangle(
+            0,
+            0,
+            galaxygineCanvas.width,
+            galaxygineCanvas.height
+        );
     }
 
     // Constuctor
