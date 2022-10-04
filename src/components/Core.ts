@@ -23,7 +23,7 @@ export default class Core {
         return { width: window.innerWidth, height: window.innerHeight };
     }
 
-    public isMobile(): boolean {
+    public hasTouchscreen(): boolean {
         return typeof screen.orientation == "undefined";
     }
 }
