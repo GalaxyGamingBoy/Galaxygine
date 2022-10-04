@@ -39,6 +39,13 @@ export default class Draw {
         this.galaxygineCanvasContext.clearRect(x, y, width, height);
     }
 
+    public eraseCanvas(): void {
+        const galaxygineCanvas = <HTMLCanvasElement>(
+            document.getElementById("galaxygine-canvas")
+        );
+        this.eraseSquare(0, 0, galaxygineCanvas.width, galaxygineCanvas.height);
+    }
+
     // Constuctor
     constructor(context: CanvasRenderingContext2D) {
         this.galaxygineCanvasContext = context;
