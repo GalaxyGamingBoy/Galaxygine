@@ -6,8 +6,12 @@ A basic game engine written in TypeScript.
 
 ### Development build
 
-`npm run buildDev`
-
-### Production build
-
 `npm run build`
+
+### Production ( Minified ) build
+
+`npm run buildMin`
+
+### Build Examples
+
+`npm run buildExamples`
