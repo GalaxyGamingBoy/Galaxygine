@@ -1,28 +1,28 @@
 import Vector2 from "../Utils/Vector2";
 
 export default class RenderObject {
-  private id: string;
-  private position: Vector2;
+    private id: string;
+    private position: Vector2;
 
-  constructor(position: Vector2 = new Vector2()) {
-    this.position = position;
-  }
+    constructor(position: Vector2 = new Vector2()) {
+        this.position = position;
+    }
 
-  // Getters
-  public getPosition(): Vector2 {
-    return this.position;
-  }
+    // Getters
+    public getPosition(): Vector2 {
+        return this.position;
+    }
 
-  public getID(): string {
-    return this.id;
-  }
+    public getID(): string {
+        return this.id;
+    }
 
-  // Setters
-  public setPosition(newPosition: Vector2): void {
-    this.position = newPosition;
-  }
+    // Setters
+    public setPosition(newPosition: Vector2): void {
+        this.position = newPosition;
+    }
 
-  public setID(newID: string): void {
-    this.id = newID;
-  }
+    public setID(newID: string): void {
+        this.id = newID;
+    }
 }
