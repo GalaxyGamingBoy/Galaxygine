@@ -1,5 +1,5 @@
 import Vector2 from "../Utils/Vector2";
-
+import { isDebug } from "../Utils/Settings";
 export default class RenderObject {
     private id: string;
     private type: string;
@@ -33,5 +33,16 @@ export default class RenderObject {
 
     public setID(newID: string): void {
         this.id = newID;
+    }
+
+    // Render
+    public render(context: CanvasRenderingContext2D): void {
+        if (isDebug) {
+            console.log(
+                `RenderObject ${this.id} with type ${
+                    this.type
+                } at ${this.position.print()} rendered.`
+            );
+        }
     }
 }

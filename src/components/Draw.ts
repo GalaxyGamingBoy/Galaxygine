@@ -1,6 +1,13 @@
+import Vector2 from "./Utils/Vector2";
+import Renderer from "./Renderer/Renderer";
+import TextRenderObject from "./Renderer/TextRenderObject";
+import RectangleRenderObject from "./Renderer/RectangleRenderObject";
+import RectangleOutlineRenderObject from "./Renderer/RectangleOutlineRenderObject";
+import StrokeTextRenderObject from "./Renderer/StrokeTextRenderObject";
 // Galaxygine - DRAW
 export default class Draw {
     private galaxygineCanvasContext: CanvasRenderingContext2D;
+    public renderer: Renderer;
 
     // GET / SET
     public setCanvasContext(context: CanvasRenderingContext2D) {
@@ -9,66 +16,75 @@ export default class Draw {
 
     // FUNCTIONS
     public drawRectangle(
-        x: number,
-        y: number,
-        width: number,
-        height: number,
-        color: string = "000000"
+        position: Vector2 = new Vector2(),
+        size: Vector2 = new Vector2(),
+        color: string = "#000000",
+        id: string = ""
     ): void {
-        this.galaxygineCanvasContext.fillStyle = color;
-        this.galaxygineCanvasContext.fillRect(x, y, width, height);
+        this.renderer.addRenderObject(
+            new RectangleRenderObject(position, size, color, id)
+        );
     }
 
     public drawRectangleOutline(
-        x: number,
-        y: number,
-        width: number,
-        height: number,
-        color: string = "000000"
+        position: Vector2 = new Vector2(),
+        size: Vector2 = new Vector2(),
+        color: string = "#000000",
+        id: string = ""
     ): void {
-        this.galaxygineCanvasContext.strokeStyle = color;
-        this.galaxygineCanvasContext.strokeRect(x, y, width, height);
+        this.renderer.addRenderObject(
+            new RectangleOutlineRenderObject(position, size, color, id)
+        );
     }
 
     public drawRectangleWithOutline(
-        x: number,
-        y: number,
-        width: number,
-        height: number,
-        outlineColor: string = "000000",
-        squareColor: string = "000000"
+        position: Vector2 = new Vector2(),
+        size: Vector2 = new Vector2(),
+        outlineColor: string = "#000000",
+        squareColor: string = "#000000",
+        id: string = ""
     ): void {
-        this.drawRectangle(x, y, width, height, squareColor);
-        this.drawRectangleOutline(x, y, width, height, outlineColor);
+        this.drawRectangle(position, size, squareColor, id);
+        this.drawRectangleOutline(
+            position,
+            size,
+            outlineColor,
+            id + "_outline"
+        );
     }
 
     public drawText(
-        x: number,
-        y: number,
-        text: string,
-        color: string = "000000"
-    ) {
-        this.galaxygineCanvasContext.fillStyle = color;
-        this.galaxygineCanvasContext.fillText(text, x, y);
+        position: Vector2 = new Vector2(),
+        color: string = "#000000",
+        text: string = "",
+        id: string = ""
+    ): void {
+        this.renderer.addRenderObject(
+            new TextRenderObject(position, color, text, id)
+        );
     }
 
     public drawStrokeText(
-        x: number,
-        y: number,
-        text: string,
-        color: string = "000000"
-    ) {
-        this.galaxygineCanvasContext.strokeStyle = color;
-        this.galaxygineCanvasContext.strokeText(text, x, y);
+        position: Vector2 = new Vector2(),
+        color: string = "#000000",
+        text: string = "",
+        id: string = ""
+    ): void {
+        this.renderer.addRenderObject(
+            new StrokeTextRenderObject(position, color, text, id)
+        );
     }
 
     public eraseRectangle(
-        x: number,
-        y: number,
-        width: number,
-        height: number
+        position: Vector2 = new Vector2(),
+        size: Vector2 = new Vector2()
     ): void {
-        this.galaxygineCanvasContext.clearRect(x, y, width, height);
+        this.galaxygineCanvasContext.clearRect(
+            position.x,
+            position.y,
+            size.x,
+            size.y
+        );
     }
 
     public eraseCanvas(): void {
@@ -76,15 +92,14 @@ export default class Draw {
             document.getElementById("galaxygine-canvas")
         );
         this.eraseRectangle(
-            0,
-            0,
-            galaxygineCanvas.width,
-            galaxygineCanvas.height
+            new Vector2(0, 0),
+            new Vector2(galaxygineCanvas.width, galaxygineCanvas.height)
         );
     }
 
     // Constuctor
     constructor(context: CanvasRenderingContext2D) {
         this.galaxygineCanvasContext = context;
+        this.renderer = new Renderer();
     }
 }

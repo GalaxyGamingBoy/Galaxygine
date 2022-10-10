@@ -1,6 +1,5 @@
 // Galaxygine - CORE
 export default class Core {
-    private isGalaxygineRunning = false;
     public engineInitialization(
         mountID: string = "galaxygine",
         canvasWidth: number = window.innerWidth,
@@ -18,9 +17,6 @@ export default class Core {
         GalaxygineCanvas.style.display = "block";
         document.getElementById(mountID).appendChild(GalaxygineCanvas);
         return GalaxygineCanvas.getContext("2d");
-
-        // Start Galaxygine
-        this.isGalaxygineRunning = true;
     }
 
     public getScreenSize(): { width: number; height: number } {
@@ -29,11 +25,5 @@ export default class Core {
 
     public hasTouchscreen(): boolean {
         return typeof screen.orientation == "undefined";
-    }
-
-    public galaxygineMainLoop(customCode: Function) {
-        while (this.isGalaxygineRunning) {
-            customCode();
-        }
     }
 }

@@ -3,6 +3,10 @@ import RenderObject from "./RenderObject";
 export default class Renderer {
     private renderPath: Array<RenderObject>;
 
+    constructor() {
+        this.renderPath = new Array<RenderObject>();
+    }
+
     public getRenderObject(index: number): [RenderObject, number] {
         return [this.renderPath[index], index];
     }
@@ -29,12 +33,13 @@ export default class Renderer {
         });
     }
 
-    public renderObjects(): void {
+    public addRenderObject(renderObject: RenderObject): void {
+        this.renderPath.push(renderObject);
+    }
+
+    public renderObjects(context: CanvasRenderingContext2D): void {
         this.renderPath.map((renderObject) => {
-            switch (renderObject.getType()) {
-                case "rectangle":
-                    break;
-            }
+            renderObject.render(context);
         });
     }
 }
