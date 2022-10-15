@@ -34,4 +34,5 @@ galaxygine.Draw.drawStrokeText(
     "sampleStrokeText",
     "black"
 );
+
 galaxygine.galaxygineMainLoop(() => {});
