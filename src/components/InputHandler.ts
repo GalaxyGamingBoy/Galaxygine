@@ -36,4 +36,13 @@ export default class InputHandler {
     public getKeyPressArray() {
         return this.keyPressArray;
     }
+
+    // Other
+    public isKeyPressed(key: string): boolean {
+        return !(this.keyPressArray.indexOf(key) == -1);
+    }
+
+    public isAnyKeyPressed(): boolean {
+        return this.keyPressArray.length != 0;
+    }
 }

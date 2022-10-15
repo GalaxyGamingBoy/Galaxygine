@@ -35,4 +35,8 @@ galaxygine.Draw.drawStrokeText(
     "black"
 );
 
-galaxygine.galaxygineMainLoop(() => {});
+galaxygine.galaxygineMainLoop(() => {
+    if (galaxygine.InputHandler.isKeyPressed("w")) {
+        console.log("W Pressed");
+    }
+});
