@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "command",
+            "name": "BuildExamples",
+            "workingDir": "./",
+            "program": "cmd",
+          "args": ["/c npm run buildExamples"],
+        },
+      {
+        "type": "command",
+        "name": "Build Galaxygine",
+        "workingDir": "./",
+        "program": "cmd",
+        "args": ["/c npm run build"],
+      },
+    ]
+}
