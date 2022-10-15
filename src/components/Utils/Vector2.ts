@@ -6,4 +6,8 @@ export default class Vector2 {
         this.x = x;
         this.y = y;
     }
+
+    public print() {
+        return `(${this.x}, ${this.y})`;
+    }
 }

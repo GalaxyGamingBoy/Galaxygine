@@ -3,7 +3,8 @@ import Core from "./components/Core";
 import Draw from "./components/Draw";
 import InputHandler from "./components/InputHandler";
 import Sound from "./components/Sound";
-
+import { isDebug } from "./components/Utils/Settings";
+import { tick } from "./components/Utils/Settings";
 export class Galaxygine {
     // Galaxygine - ESSENTIALS
     public static version: string = "v0.0.1";
@@ -18,6 +19,19 @@ export class Galaxygine {
     public setCanvasContext(context: CanvasRenderingContext2D) {
         this.galaxygineCanvasContext = context;
         this.Draw.setCanvasContext(context);
+    }
+
+    public galaxygineMainLoop(customCode: Function) {
+        window.setInterval(() => {
+            try {
+                this.Draw.renderer.renderObjects(this.galaxygineCanvasContext);
+            } catch (e) {
+                if (isDebug) {
+                    console.log("No renderObjects to render.");
+                }
+            }
+            customCode();
+        }, tick);
     }
 
     // Constructor
