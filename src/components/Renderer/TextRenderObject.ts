@@ -8,10 +8,10 @@ export default class TextRenderObject extends RenderObject {
 
     constructor(
         position: Vector2 = new Vector2(),
-        color: string = "#000000",
-        font: string = "48px serif",
         text: string = "",
-        id: string = ""
+        id: string = "",
+        color: string = "#000000",
+        font: string = "48px serif"
     ) {
         super(position, "text");
         super.setID(id);

@@ -18,60 +18,62 @@ export default class Draw {
     public drawRectangle(
         position: Vector2 = new Vector2(),
         size: Vector2 = new Vector2(),
-        color: string = "#000000",
-        id: string = ""
+        id: string = "",
+        color: string = "#000000"
     ): void {
         this.renderer.addRenderObject(
-            new RectangleRenderObject(position, size, color, id)
+            new RectangleRenderObject(position, size, id, color)
         );
     }
 
     public drawRectangleOutline(
         position: Vector2 = new Vector2(),
         size: Vector2 = new Vector2(),
-        color: string = "#000000",
-        id: string = ""
+        id: string = "",
+        color: string = "#000000"
     ): void {
         this.renderer.addRenderObject(
-            new RectangleOutlineRenderObject(position, size, color, id)
+            new RectangleOutlineRenderObject(position, size, id, color)
         );
     }
 
     public drawRectangleWithOutline(
         position: Vector2 = new Vector2(),
         size: Vector2 = new Vector2(),
+        id: string = "",
         outlineColor: string = "#000000",
-        squareColor: string = "#000000",
-        id: string = ""
+        squareColor: string = "#000000"
     ): void {
-        this.drawRectangle(position, size, squareColor, id);
+        this.drawRectangle(position, size, id, squareColor);
         this.drawRectangleOutline(
             position,
             size,
-            outlineColor,
-            id + "_outline"
+            id + "_outline",
+            outlineColor
         );
     }
 
     public drawText(
         position: Vector2 = new Vector2(),
-        color: string = "#000000",
         text: string = "",
-        id: string = ""
+        id: string = "",
+        color: string = "#000000",
+        font: string = "48px serif"
     ): void {
         this.renderer.addRenderObject(
-            new TextRenderObject(position, color, text, id)
+            new TextRenderObject(position, text, id, color, font)
         );
     }
 
     public drawStrokeText(
         position: Vector2 = new Vector2(),
-        color: string = "#000000",
         text: string = "",
-        id: string = ""
+        id: string = "",
+        color: string = "#000000",
+        font: string = "48px serif"
     ): void {
         this.renderer.addRenderObject(
-            new StrokeTextRenderObject(position, color, text, id)
+            new StrokeTextRenderObject(position, text, id, color, font)
         );
     }
 

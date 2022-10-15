@@ -8,8 +8,8 @@ export default class RectangleRenderObject extends RenderObject {
     constructor(
         position: Vector2 = new Vector2(),
         size: Vector2 = new Vector2(),
-        color: string = "#000000",
-        id: string = ""
+        id: string = "",
+        color: string = "#000000"
     ) {
         super(position, "rectangle");
         super.setID(id);

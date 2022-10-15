@@ -8,8 +8,8 @@ export default class RectangleOutlineRenderObject extends RenderObject {
     constructor(
         position: Vector2 = new Vector2(),
         size: Vector2 = new Vector2(),
-        color: string = "#000000",
-        id: string = ""
+        id: string = "",
+        color: string = "#000000"
     ) {
         super(position, "rectangleOutline");
         super.setID(id);
