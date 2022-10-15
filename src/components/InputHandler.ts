@@ -1,4 +1,5 @@
 // Galaxygine - INPUT HANDLER
+import keyActions from "../res/keyActions.json";
 export default class InputHandler {
     private keyPressArray: Array<string>;
 
@@ -44,5 +45,25 @@ export default class InputHandler {
 
     public isAnyKeyPressed(): boolean {
         return this.keyPressArray.length != 0;
+    }
+
+    public isKeyArrayPressed(keyArray: Array<string>): boolean {
+        let keyPressed = false;
+        keyArray.map((key) => {
+            if (this.isKeyPressed(key)) {
+                keyPressed = true;
+            }
+        });
+        return keyPressed;
+    }
+
+    public isKeyActionPressed(actionID: string): boolean {
+        let actionPressed = false;
+        keyActions.map((action) => {
+            if (this.isKeyArrayPressed(action.keys)) {
+                actionPressed = true;
+            }
+        });
+        return actionPressed;
     }
 }

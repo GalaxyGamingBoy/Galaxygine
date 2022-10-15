@@ -39,4 +39,7 @@ galaxygine.galaxygineMainLoop(() => {
     if (galaxygine.InputHandler.isKeyPressed("w")) {
         console.log("W Pressed");
     }
+    if (galaxygine.InputHandler.isKeyActionPressed("key_right")) {
+        console.log("Action Right Pressed");
+    }
 });

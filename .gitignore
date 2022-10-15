@@ -132,5 +132,6 @@ dist
 galaxygine.js
 sample/*/src/[A-Z]*.ts
 sample/*/src/components
+sample/*/src/res
 sample/*/*.js
 !index.ts
