@@ -4,6 +4,8 @@ import TextRenderObject from "./Renderer/TextRenderObject";
 import RectangleRenderObject from "./Renderer/RectangleRenderObject";
 import RectangleOutlineRenderObject from "./Renderer/RectangleOutlineRenderObject";
 import StrokeTextRenderObject from "./Renderer/StrokeTextRenderObject";
+import ImageRenderObject from "./Renderer/ImageRenderObject";
+
 // Galaxygine - DRAW
 export default class Draw {
     private galaxygineCanvasContext: CanvasRenderingContext2D;
@@ -51,6 +53,17 @@ export default class Draw {
             id + "_outline",
             outlineColor
         );
+    }
+
+    public drawImage(
+        position: Vector2 = new Vector2(),
+        size: Vector2 = new Vector2(),
+        imagePath: string = "",
+        id: string = ""
+        ): void {
+        this.renderer.addRenderObject(
+            new ImageRenderObject(position, size, imagePath, id)
+            );
     }
 
     public drawText(
