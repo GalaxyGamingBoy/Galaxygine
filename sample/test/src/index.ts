@@ -42,7 +42,7 @@ galaxygine.Draw.drawText(
     "keyPressed",
     "black"
 )
-galaxygine.Sound.addSound("test", new Audio("src/res/sound.wav"))
+galaxygine.Sound.addSound("test", "src/res/sound.wav")
 galaxygine.galaxygineMainLoop(() => {
     if (galaxygine.InputHandler.isKeyPressed("w")) {
         console.log("W Pressed");

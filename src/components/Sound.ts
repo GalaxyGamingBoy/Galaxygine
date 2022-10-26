@@ -8,7 +8,8 @@ export default class Sound {
     }
 
     // SET / ADD / REMOVE
-    public addSound(soundID: string, sound: HTMLAudioElement) {
+    public addSound(soundID: string, soundPath: string) {
+        let sound: HTMLAudioElement = new Audio(soundPath);
         this.soundLibrary.push({soundID, sound})
     }
 
