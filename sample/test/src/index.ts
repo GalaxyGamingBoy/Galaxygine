@@ -1,5 +1,7 @@
 import Vector2 from "./components/Utils/Vector2";
-import { Galaxygine } from "./Galaxygine";
+import TextRenderObject from "./components/Renderer/TextRenderObject";
+import RenderObject from "./components/Renderer/RenderObject";
+import {Galaxygine} from "./Galaxygine";
 
 var galaxygine: Galaxygine = new Galaxygine();
 galaxygine.setCanvasContext(galaxygine.Core.engineInitialization());
@@ -34,6 +36,12 @@ galaxygine.Draw.drawStrokeText(
     "sampleStrokeText",
     "black"
 );
+galaxygine.Draw.drawText(
+    new Vector2(300, 300),
+    "KEY",
+    "keyPressed",
+    "black"
+)
 
 galaxygine.galaxygineMainLoop(() => {
     if (galaxygine.InputHandler.isKeyPressed("w")) {
@@ -41,5 +49,10 @@ galaxygine.galaxygineMainLoop(() => {
     }
     if (galaxygine.InputHandler.isKeyActionPressed("key_right")) {
         console.log("Action Right Pressed");
+    }
+    if (galaxygine.InputHandler.isAnyKeyPressed()) {
+        let keyPressedObject: [TextRenderObject, number] = galaxygine.Draw.renderer.getRenderObjectByID("keyPressed") as [TextRenderObject, number];
+        keyPressedObject[0].setText(galaxygine.InputHandler.getKeyPressArray()[0])
+        galaxygine.Draw.renderer.setRenderObject(keyPressedObject);
     }
 });

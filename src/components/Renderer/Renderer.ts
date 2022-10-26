@@ -12,22 +12,24 @@ export default class Renderer {
     }
 
     public getRenderObjectByID(id: string): [RenderObject, number] | number {
+        let renderObjectReturn: [RenderObject, number] = [new RenderObject(), 0];
         this.renderPath.map((renderObject, index) => {
             if (renderObject.getID() == id) {
-                return this.getRenderObject(index);
+                renderObjectReturn[1] = index;
             }
         });
-        return 0;
+        renderObjectReturn = this.getRenderObject(renderObjectReturn[1]);
+        return renderObjectReturn;
     }
 
-    public setRenderObject(index: number, renderObject: RenderObject): void {
-        this.renderPath[index] = renderObject;
+    public setRenderObject(object: [RenderObject, number]): void {
+        this.renderPath[object[1]] = object[0];
     }
 
     public setRenderObjectByID(id: string, renderObject: RenderObject): void {
         this.renderPath.map((pathRenderObject, index) => {
             if (pathRenderObject.getID() == id) {
-                this.setRenderObject(index, renderObject);
+                this.setRenderObject([renderObject, index]);
                 return;
             }
         });
