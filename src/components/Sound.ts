@@ -26,24 +26,26 @@ export default class Sound {
     }
 
     public getSoundElementFromLibrary(soundID: string): number | { soundID: string, sound: HTMLAudioElement } {
+        let returnElement: { soundID: string, sound: HTMLAudioElement };
         this.soundLibrary.map((element) => {
             if (element.soundID == soundID) {
-                return element;
+                returnElement = element;
             }
         })
+        if (returnElement) {
+            return returnElement;
+        }
         return -1;
     }
 
     // OTHER
-    public playSound(soundID: string)
-    {
-        let soundToBePlayed: {soundID: string, sound: HTMLAudioElement} = this.getSoundElementFromLibrary(soundID) as {soundID: string, sound: HTMLAudioElement};
+    public playSound(soundID: string) {
+        let soundToBePlayed: { soundID: string, sound: HTMLAudioElement } = this.getSoundElementFromLibrary(soundID) as { soundID: string, sound: HTMLAudioElement };
         soundToBePlayed.sound.play();
     }
 
-    public stopSound(soundID: string)
-    {
-        let soundToBePlayed: {soundID: string, sound: HTMLAudioElement} = this.getSoundElementFromLibrary(soundID) as {soundID: string, sound: HTMLAudioElement};
+    public stopSound(soundID: string) {
+        let soundToBePlayed: { soundID: string, sound: HTMLAudioElement } = this.getSoundElementFromLibrary(soundID) as { soundID: string, sound: HTMLAudioElement };
         soundToBePlayed.sound.pause();
     }
 }

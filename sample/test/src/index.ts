@@ -42,13 +42,16 @@ galaxygine.Draw.drawText(
     "keyPressed",
     "black"
 )
-
+galaxygine.Sound.addSound("test", new Audio("src/res/sound.wav"))
 galaxygine.galaxygineMainLoop(() => {
     if (galaxygine.InputHandler.isKeyPressed("w")) {
         console.log("W Pressed");
     }
     if (galaxygine.InputHandler.isKeyActionPressed("key_right")) {
         console.log("Action Right Pressed");
+    }
+    if (galaxygine.InputHandler.isKeyPressed("Enter")) {
+        galaxygine.Sound.playSound("test")
     }
     if (galaxygine.InputHandler.isAnyKeyPressed()) {
         let keyPressedObject: [TextRenderObject, number] = galaxygine.Draw.renderer.getRenderObjectByID("keyPressed") as [TextRenderObject, number];
