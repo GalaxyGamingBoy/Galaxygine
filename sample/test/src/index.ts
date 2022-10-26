@@ -43,7 +43,7 @@ galaxygine.Draw.drawText(
     "black"
 )
 galaxygine.Draw.drawImage(new Vector2(400, 400), new Vector2(32, 32), "src/res/block.png", "sampleImage")
-galaxygine.Sound.addSound("test", new Audio("src/res/sound.wav"))
+galaxygine.Sound.addSound("test", "src/res/sound.wav")
 galaxygine.galaxygineMainLoop(() => {
     if (galaxygine.InputHandler.isKeyPressed("w")) {
         console.log("W Pressed");
