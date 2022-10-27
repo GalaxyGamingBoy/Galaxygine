@@ -1,0 +1,67 @@
+name: Create release
+on:
+  push:
+    branches: 
+      - master
+  workflow_dispatch:
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Setup NodeJS
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+    - name: Setup ZIP
+      uses: montudor/action-zip@v1
+    - name: Clone Galaxygine
+      run: git clone https://github.com/GalaxyGamingBoy/Galaxygine.git .
+    - name: Install Dependencies
+      run: npm install
+    - name: Build Galaxygine
+      run: |
+        npm run build
+        npm run buildMin
+        npm run buildExamples
+    - name: Package Galaxygine
+      run: |
+        zip -qq -r examples.zip sample/
+        zip -qq -r galaxygine.zip tsconfig.json README.MD package.json package-lock.json .jshintrc .gitpod.yml .gitignore src/ .fleet/
+    - name: Uploading Galaxygine Bundle Artifact
+      uses: actions/upload-artifact@v3
+      with:
+          name: Galaxygine Bundle
+          path: galaxygine.js
+    - name: Uploading Galaxygine Minified Bundle Artifact
+      uses: actions/upload-artifact@v3
+      with:
+          name: Galaxygine Minified Bundle
+          path: galaxygineMin.js
+    - name: Uploading Examples Artifact
+      uses: actions/upload-artifact@v3
+      with:
+          name: Examples
+          path: examples.zip
+    - name: Uploading Galaxygine Source Code Artifact
+      uses: actions/upload-artifact@v3
+      with:
+          name: Galaxygine Source Code
+          path: galaxygine.zip
+    - name: Extract version from package.json
+      uses: sergeysova/jq-action@v2
+      id: version
+      with:
+        cmd: 'jq .version package.json -r'
+    - name: Create release
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUBREPOTOKEN }}"
+        prerelease: false
+        automatic_release_tag: ${{ steps.version.outputs.value }}
+        files: |
+          galaxygine.js
+          galaxygineMin.js
+          examples.zip
+          galaxygine.zip
+        
