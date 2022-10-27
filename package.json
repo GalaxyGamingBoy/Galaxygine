@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild ./src/Galaxygine.ts --bundle --outfile=galaxygine.js",
-    "buildMin": "esbuild ./src/Galaxygine.ts --bundle --minify --target=chrome58,firefox57,safari11,edge16 --outfile=galaxygine.js",
+    "buildMin": "esbuild ./src/Galaxygine.ts --bundle --minify --target=chrome58,firefox57,safari11,edge16 --outfile=galaxygineMin.js",
     "buildExamples": "cp -r ./src/* ./sample/*/src/ && cd sample && python buildAll.py"
   },
   "author": "GalaxyGamingBoy",
