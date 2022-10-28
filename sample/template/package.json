@@ -1,0 +1,17 @@
+{
+  "name": "galaxygine-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "esbuild ./src/index.ts --bundle --minify --outfile=index.js",
+    "sync": "cd ../.. && npm run buildExamples && cd ./sample/temlate/",
+    "sync:build": "npm run sync && npm run build"
+  },
+  "author": "GalaxyGamingBoy",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "esbuild": "^0.15.10"
+  }
+}
