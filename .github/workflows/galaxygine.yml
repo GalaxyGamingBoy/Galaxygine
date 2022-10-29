@@ -28,6 +28,7 @@ jobs:
       run: |
         zip -qq -r examples.zip sample/
         zip -qq -r galaxygine.zip tsconfig.json README.MD package.json package-lock.json .jshintrc .gitpod.yml .gitignore src/ .fleet/
+        zip -qq -r template.zip sample/template/
     - name: Uploading Galaxygine Bundle Artifact
       uses: actions/upload-artifact@v3
       with:
@@ -43,6 +44,11 @@ jobs:
       with:
           name: Examples
           path: examples.zip
+    - name: Uploading Template Artifact
+      uses: actions/upload-artifact@v3
+      with:
+          name: Template
+          path: template.zip
     - name: Uploading Galaxygine Source Code Artifact
       uses: actions/upload-artifact@v3
       with:
@@ -64,4 +70,5 @@ jobs:
           galaxygineMin.js
           examples.zip
           galaxygine.zip
+          template.zip
         
