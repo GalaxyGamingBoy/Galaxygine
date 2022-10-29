@@ -1,0 +1,28 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "sync:build",
+            "group": "build",
+            "problemMatcher": [],
+            "label": "npm: sync:build",
+            "detail": "npm run sync && npm run build"
+        },
+        {
+            "type": "npm",
+            "script": "sync",
+            "problemMatcher": [],
+            "label": "npm: sync",
+            "detail": "python sync.py"
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "group": "build",
+            "problemMatcher": [],
+            "label": "npm: build",
+            "detail": "esbuild ./src/index.ts --bundle --minify --outfile=index.js"
+        }
+    ]
+}
