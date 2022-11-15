@@ -1,0 +1,31 @@
+{
+  "configurations": [
+    {
+      "type": "command",
+      "name": "Build",
+      "workingDir": "./",
+      "program": "cmd",
+      "args": [
+        "/c npm run build"
+      ],
+    },
+    {
+      "type": "command",
+      "name": "Sync",
+      "workingDir": "./",
+      "program": "cmd",
+      "args": [
+        "/c npm run sync"
+      ],
+    },
+    {
+      "type": "command",
+      "name": "Build&Sync",
+      "workingDir": "./",
+      "program": "cmd",
+      "args": [
+        "/c npm run sync:build"
+      ],
+    },
+  ]
+}
