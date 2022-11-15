@@ -10,7 +10,7 @@
     "buildExamples": "cd sample && python sync.py && python buildAll.py"
   },
   "author": "GalaxyGamingBoy",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "devDependencies": {
     "typescript": "^4.8.4"
   },
