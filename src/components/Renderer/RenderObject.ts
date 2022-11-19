@@ -1,3 +1,8 @@
+// Copyright (c) 2022 GalaxyGamingBoy
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 import Vector2 from "../Utils/Vector2";
 import { isDebug } from "../Utils/Settings";
 export default class RenderObject {

@@ -1,3 +1,8 @@
+// Copyright (c) 2022 GalaxyGamingBoy
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 import Vector2 from "../Utils/Vector2";
 import RenderObject from "./RenderObject";
 
@@ -41,7 +46,13 @@ export default class RectangleRenderObject extends RenderObject {
     }
 
     public render(context: CanvasRenderingContext2D): void {
-        context.drawImage(this.image, this.getPosition().x, this.getPosition().y, this.getSize().x, this.getSize().y);
+        context.drawImage(
+            this.image,
+            this.getPosition().x,
+            this.getPosition().y,
+            this.getSize().x,
+            this.getSize().y
+        );
         super.render(context);
     }
 }

@@ -1,3 +1,8 @@
+// Copyright (c) 2022 GalaxyGamingBoy
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 // Galaxygine - INPUT HANDLER
 import keyActions from "../res/keyActions.json";
 export default class InputHandler {

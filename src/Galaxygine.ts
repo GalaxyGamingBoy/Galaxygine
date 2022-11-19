@@ -1,10 +1,15 @@
+// Copyright (c) 2022 GalaxyGamingBoy
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 // Galaxygine Engine
 import Core from "./components/Core";
 import Draw from "./components/Draw";
 import InputHandler from "./components/InputHandler";
 import Sound from "./components/Sound";
-import {isDebug} from "./components/Utils/Settings";
-import {tick} from "./components/Utils/Settings";
+import { isDebug } from "./components/Utils/Settings";
+import { tick } from "./components/Utils/Settings";
 
 export class Galaxygine {
     // Galaxygine - ESSENTIALS
@@ -33,7 +38,6 @@ export class Galaxygine {
                 }
             }
             customCode();
-
         }, tick);
     }
 

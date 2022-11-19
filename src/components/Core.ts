@@ -1,3 +1,8 @@
+// Copyright (c) 2022 GalaxyGamingBoy
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 // Galaxygine - CORE
 export default class Core {
     public engineInitialization(

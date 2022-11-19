@@ -1,3 +1,8 @@
+// Copyright (c) 2022 GalaxyGamingBoy
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 export const beige: string = "#F5F5DC";
 export const black: string = "#000000";
 export const blue: string = "#0000FF";
