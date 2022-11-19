@@ -1,3 +1,8 @@
+// Copyright (c) 2022 GalaxyGamingBoy
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 import Vector2 from "./Utils/Vector2";
 import Renderer from "./Renderer/Renderer";
 import TextRenderObject from "./Renderer/TextRenderObject";
@@ -60,10 +65,10 @@ export default class Draw {
         size: Vector2 = new Vector2(),
         imagePath: string = "",
         id: string = ""
-        ): void {
+    ): void {
         this.renderer.addRenderObject(
             new ImageRenderObject(position, size, imagePath, id)
-            );
+        );
     }
 
     public drawText(

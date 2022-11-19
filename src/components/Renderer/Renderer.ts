@@ -1,3 +1,8 @@
+// Copyright (c) 2022 GalaxyGamingBoy
+//
+// This software is released under the MIT License.
+// https://opensource.org/licenses/MIT
+
 import RenderObject from "./RenderObject";
 
 export default class Renderer {
@@ -12,7 +17,10 @@ export default class Renderer {
     }
 
     public getRenderObjectByID(id: string): [RenderObject, number] | number {
-        let renderObjectReturn: [RenderObject, number] = [new RenderObject(), 0];
+        let renderObjectReturn: [RenderObject, number] = [
+            new RenderObject(),
+            0,
+        ];
         this.renderPath.map((renderObject, index) => {
             if (renderObject.getID() == id) {
                 renderObjectReturn[1] = index;
