@@ -15,4 +15,24 @@ export default class Vector2 {
     public print() {
         return `(${this.x}, ${this.y})`;
     }
+
+    public changeX(x: number) {
+        this.x += x;
+        return this;
+    }
+
+    public changeY(y: number) {
+        this.y += y;
+        return this;
+    }
+
+    public setX(x: number) {
+        this.x = x;
+        return this;
+    }
+
+    public setY(y: number) {
+        this.y = y;
+        return this;
+    }
 }
