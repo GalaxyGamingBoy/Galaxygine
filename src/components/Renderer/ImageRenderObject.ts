@@ -6,7 +6,7 @@
 import Vector2 from "../Utils/Vector2";
 import RenderObject from "./RenderObject";
 
-export default class RectangleRenderObject extends RenderObject {
+export default class ImageRenderObject extends RenderObject {
     private size: Vector2 = new Vector2();
     private image: HTMLImageElement = new Image();
 
