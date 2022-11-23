@@ -65,7 +65,10 @@ export default class InputHandler {
     public isKeyActionPressed(actionID: string): boolean {
         let actionPressed = false;
         keyActions.map((action) => {
-            if (this.isKeyArrayPressed(action.keys)) {
+            if (
+                this.isKeyArrayPressed(action.keys) &&
+                actionID == action.actionID
+            ) {
                 actionPressed = true;
             }
         });
