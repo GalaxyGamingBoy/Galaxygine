@@ -4,35 +4,35 @@
 // https://opensource.org/licenses/MIT
 
 export default class Vector2 {
-    public x: number;
-    public y: number;
+  public x: number;
+  public y: number;
 
-    constructor(x: number = 0, y: number = 0) {
-        this.x = x;
-        this.y = y;
-    }
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
+  }
 
-    public print() {
-        return `(${this.x}, ${this.y})`;
-    }
+  public print() {
+    return `(${this.x}, ${this.y})`;
+  }
 
-    public changeX(x: number) {
-        this.x += x;
-        return this;
-    }
+  public changeX(x: number) {
+    this.x += x;
+    return this;
+  }
 
-    public changeY(y: number) {
-        this.y += y;
-        return this;
-    }
+  public changeY(y: number) {
+    this.y += y;
+    return this;
+  }
 
-    public setX(x: number) {
-        this.x = x;
-        return this;
-    }
+  public setX(x: number) {
+    this.x = x;
+    return this;
+  }
 
-    public setY(y: number) {
-        this.y = y;
-        return this;
-    }
+  public setY(y: number) {
+    this.y = y;
+    return this;
+  }
 }
