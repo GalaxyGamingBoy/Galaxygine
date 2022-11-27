@@ -7,12 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "esbuild ./src/Galaxygine.ts --bundle --outfile=galaxygine.js",
     "buildMin": "esbuild ./src/Galaxygine.ts --bundle --minify --target=chrome58,firefox57,safari11,edge16 --outfile=galaxygineMin.js",
-    "buildExamples": "cd sample && python sync.py && python buildAll.py"
+    "buildExamples": "cd sample && python sync.py && python buildAll.py",
+    "lint": "gts lint",
+    "fix": "gts fix"
   },
   "author": "GalaxyGamingBoy",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^4.8.4"
+    "typescript": "~4.7.0",
+    "gts": "^3.1.1",
+    "@types/node": "^14.11.2"
   },
   "dependencies": {
     "esbuild": "^0.15.10"
