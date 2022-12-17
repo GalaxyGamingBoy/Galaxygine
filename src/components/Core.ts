@@ -4,12 +4,14 @@
 // https://opensource.org/licenses/MIT
 
 // Galaxygine - CORE
+import Vector2 from './Utils/Vector2';
+
 export default class Core {
   public engineInitialization(
     mountID = 'galaxygine',
     canvasWidth: number = window.innerWidth,
     canvasHeight: number = window.innerHeight
-  ): CanvasRenderingContext2D {
+  ): CanvasRenderingContext2D | null {
     // Hide overflow
     document.body.appendChild(document.createElement('style')).innerHTML =
       'html, body { margin: 0px; overflow: hidden; display: block;}';
@@ -20,12 +22,12 @@ export default class Core {
     GalaxygineCanvas.width = canvasWidth;
     GalaxygineCanvas.height = canvasHeight;
     GalaxygineCanvas.style.display = 'block';
-    document.getElementById(mountID).appendChild(GalaxygineCanvas);
+    document.getElementById(mountID)!.appendChild(GalaxygineCanvas);
     return GalaxygineCanvas.getContext('2d');
   }
 
-  public getScreenSize(): {width: number; height: number} {
-    return {width: window.innerWidth, height: window.innerHeight};
+  public getScreenSize(): Vector2 {
+    return new Vector2(window.innerWidth, window.innerHeight);
   }
 
   public hasTouchscreen(): boolean {
