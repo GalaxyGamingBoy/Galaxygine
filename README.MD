@@ -1,6 +1,9 @@
 # Galaxygine aka The Galaxy Engine
 
-A basic game engine written in TypeScript.
+A basic game engine written in TypeScript.  
+
+## Documentation
+Documentation can be found [here](https://galaxygamingboy.github.io/Galaxygine_Documentation/)
 
 ## Automatic Project Creation
 To create a project using the Galaxygine template, download the python file here:  
