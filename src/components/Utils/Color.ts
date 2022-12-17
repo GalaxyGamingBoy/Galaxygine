@@ -23,6 +23,6 @@ export const pink = '#ffc0cb';
 export const purple = '#A020F0';
 export const white = '#FFFFFF';
 export const red = '#FF0000';
-export const skyBlue = '#B87CEEb';
+export const skyBlue = '#87CEBB';
 export const violet = '#8F00FF';
 export const yellow = '#FFFF00';
