@@ -49,9 +49,9 @@ export default class Draw {
     size: Vector2 = new Vector2(),
     id = '',
     outlineColor = '#000000',
-    squareColor = '#000000'
+    rectangleColor = '#000000'
   ): void {
-    this.drawRectangle(position, size, id, squareColor);
+    this.drawRectangle(position, size, id, rectangleColor);
     this.drawRectangleOutline(position, size, id + '_outline', outlineColor);
   }
 
