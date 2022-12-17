@@ -114,7 +114,7 @@ export default class Draw {
 
   // Constuctor
   constructor(context: CanvasRenderingContext2D) {
-    this.galaxygineCanvasContext = context;
+    this.setCanvasContext(context)
     this.renderer = new Renderer();
   }
 }
