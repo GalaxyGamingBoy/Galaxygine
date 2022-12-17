@@ -6,7 +6,7 @@
 import Vector2 from '../Utils/Vector2';
 import {isDebug} from '../Utils/Settings';
 export default class RenderObject {
-  private id: string;
+  private id = '';
   private type: string;
   private position: Vector2;
 
