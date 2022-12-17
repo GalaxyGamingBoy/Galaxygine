@@ -13,7 +13,8 @@ import ImageRenderObject from './Renderer/ImageRenderObject';
 
 // Galaxygine - DRAW
 export default class Draw {
-  private galaxygineCanvasContext: CanvasRenderingContext2D;
+  private galaxygineCanvasContext: CanvasRenderingContext2D =
+    new CanvasRenderingContext2D();
   public renderer: Renderer;
 
   // GET / SET
@@ -114,7 +115,7 @@ export default class Draw {
 
   // Constuctor
   constructor(context: CanvasRenderingContext2D) {
-    this.setCanvasContext(context)
+    this.setCanvasContext(context);
     this.renderer = new Renderer();
   }
 }
