@@ -7,7 +7,7 @@ Documentation can be found [here](https://galaxygamingboy.github.io/Galaxygine_D
 
 ## Automatic Project Creation
 To create a project using the Galaxygine template, download the makeGalaxygineTemplate.py file from the repository or release then run:  
-```./makeGalaxygineTemplate.py <project_name>```
+```chmod a+x ./makeGalaxygineTemplate.py && ./makeGalaxygineTemplate.py <project_name>```
 
 ## Building the project
 
