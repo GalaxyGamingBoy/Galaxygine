@@ -6,9 +6,7 @@ A basic game engine written in TypeScript.
 Documentation can be found [here](https://galaxygamingboy.github.io/Galaxygine_Documentation/)
 
 ## Automatic Project Creation
-To create a project using the Galaxygine template, download the python file here:  
-```wget https://gist.githubusercontent.com/GalaxyGamingBoy/02f34126b1a5ddf202014119af1600fa/raw/makeGalaxygineTemplate.py```  
-then run:  
+To create a project using the Galaxygine template, download the makeGalaxygineTemplate.py file from the repository or release then run:  
 ```./makeGalaxygineTemplate.py <project_name>```
 
 ## Building the project

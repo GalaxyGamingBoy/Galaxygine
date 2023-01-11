@@ -71,4 +71,5 @@ jobs:
           examples.zip
           galaxygine.zip
           template.zip
+          makeGalaxygineTemplate.py
         
