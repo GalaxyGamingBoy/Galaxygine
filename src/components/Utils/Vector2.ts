@@ -26,6 +26,11 @@ export default class Vector2 {
     return this;
   }
 
+  public change(changeVector: Vector2) {
+    this.x += changeVector.x;
+    this.y += changeVector.y;
+  }
+
   public setX(x: number) {
     this.x = x;
     return this;
@@ -34,5 +39,10 @@ export default class Vector2 {
   public setY(y: number) {
     this.y = y;
     return this;
+  }
+
+  public set(newVector: Vector2) {
+    this.x = newVector.x;
+    this.y = newVector.y;
   }
 }

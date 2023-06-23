@@ -7,6 +7,7 @@
 import Core from './components/Core';
 import Draw from './components/Draw';
 import InputHandler from './components/InputHandler';
+import Renderer from './components/Renderer/Renderer';
 import Sound from './components/Sound';
 import {isDebug} from './components/Utils/Settings';
 import {tick} from './components/Utils/Settings';
@@ -14,13 +15,14 @@ import {tick} from './components/Utils/Settings';
 export class Galaxygine {
   // Galaxygine - ESSENTIALS
   public static version = 'v0.0.1';
-  private galaxygineCanvasContext: CanvasRenderingContext2D;
+  private galaxygineCanvasContext!: CanvasRenderingContext2D;
 
   // Classes
   public Core: Core;
   public Draw: Draw;
   public InputHandler: InputHandler;
   public Sound: Sound;
+  public Render: Renderer;
 
   public setCanvasContext(context: CanvasRenderingContext2D) {
     this.galaxygineCanvasContext = context;
@@ -47,5 +49,6 @@ export class Galaxygine {
     this.Draw = new Draw(this.galaxygineCanvasContext);
     this.InputHandler = new InputHandler();
     this.Sound = new Sound();
+    this.Render = this.Draw.renderer;
   }
 }

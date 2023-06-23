@@ -16,7 +16,7 @@ export default class Renderer {
     return [this.renderPath[index], index];
   }
 
-  public getRenderObjectByID(id: string): [RenderObject, number] | number {
+  public getRenderObjectByID(id: string): RenderObject {
     let renderObjectReturn: [RenderObject, number] = [new RenderObject(), 0];
     this.renderPath.map((renderObject, index) => {
       if (renderObject.getID() === id) {
@@ -24,20 +24,7 @@ export default class Renderer {
       }
     });
     renderObjectReturn = this.getRenderObject(renderObjectReturn[1]);
-    return renderObjectReturn;
-  }
-
-  public setRenderObject(object: [RenderObject, number]): void {
-    this.renderPath[object[1]] = object[0];
-  }
-
-  public setRenderObjectByID(id: string, renderObject: RenderObject): void {
-    this.renderPath.map((pathRenderObject, index) => {
-      if (pathRenderObject.getID() === id) {
-        this.setRenderObject([renderObject, index]);
-        return;
-      }
-    });
+    return renderObjectReturn[0];
   }
 
   public addRenderObject(renderObject: RenderObject): void {
